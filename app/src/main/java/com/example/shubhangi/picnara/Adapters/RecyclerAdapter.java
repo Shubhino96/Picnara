@@ -43,8 +43,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataVi
         Context context = c;
         LayoutInflater inflater = LayoutInflater.from(context);
         View DtView = inflater.inflate(R.layout.element,parent,true);
-        DataViewHolder viewHolder=new DataViewHolder(DtView);
-        return viewHolder;
+        DataViewHolder viewholder=new DataViewHolder(DtView);
+        return viewholder;
     }
 
     @Override

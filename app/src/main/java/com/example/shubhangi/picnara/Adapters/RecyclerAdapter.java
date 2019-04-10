@@ -33,14 +33,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataVi
         }
     }
     private ArrayList<Data> dat;
-    RecyclerAdapter(ArrayList<Data> d1){
+    Context c;
+    RecyclerAdapter(ArrayList<Data> d1,Context c){
         dat=d1;
+        this.c=c;
     }
     @Override
     public RecyclerAdapter.DataViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        Context context = c;
         LayoutInflater inflater = LayoutInflater.from(context);
-        View DtView = inflater.inflate(R.layout.element,parent,false);
+        View DtView = inflater.inflate(R.layout.element,parent,true);
         DataViewHolder viewHolder=new DataViewHolder(DtView);
         return viewHolder;
     }
@@ -65,6 +67,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataVi
 
     @Override
     public int getItemCount() {
-        return dat.size();
+        return 3;
     }
 }

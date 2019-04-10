@@ -31,9 +31,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return PagerFragment.newInstance(adp);
             case 1:
-                return PagerFragment.newInstance(null);
+                return PagerFragment.newInstance(adp);
             case 2:
-                return PagerFragment.newInstance(null);
+                return PagerFragment.newInstance(adp);
             default:
                 return null;
         }
@@ -42,5 +42,10 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return NUM_ITEMS;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return fragName[position];
     }
 }

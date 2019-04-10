@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
-        ArrayList<Data> dat1=new ArrayList<>();
-        dat1.add(new Data("Rajiv","Photography can be art, hoby or..","600","30 to 50","20 Mar 2019","02 Apr 2019"));
-        dat1.add(new Data("Rohit","Photography can be art, hoby or..","800","10 to 20","24 Mar 2019","02 Apr 2019"));
-        dat1.add(new Data("Ankit","Photography can be art, hoby or..","700","15 to 30","20 Mar 2019","09 Apr 2019"));
+        ArrayList<Data> arrlist=new ArrayList<>();
+        arrlist.add(new Data("Rajiv","Photography can be art, hoby or..","600","30 to 50","20 Mar 2019","02 Apr 2019"));
+        arrlist.add(new Data("Rohit","Photography can be art, hoby or..","800","10 to 20","24 Mar 2019","02 Apr 2019"));
+        arrlist.add(new Data("Ankit","Photography can be art, hoby or..","700","15 to 30","20 Mar 2019","09 Apr 2019"));
 
-        padap=new ViewPagerAdapter(getSupportFragmentManager(),dat1);
+        padap=new ViewPagerAdapter(getSupportFragmentManager(),arrlist);
         vpPager.setAdapter(padap);
     }
 }

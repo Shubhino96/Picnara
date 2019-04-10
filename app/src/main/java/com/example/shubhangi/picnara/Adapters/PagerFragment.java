@@ -21,7 +21,7 @@ import java.util.List;
 
 public class PagerFragment extends Fragment {
 
-    static ArrayList<Data> d1 = new ArrayList<Data>();
+    ArrayList<Data> d1 = new ArrayList<Data>();
     public static PagerFragment newInstance(ArrayList<Data> data){
         PagerFragment pagerFragment=new PagerFragment();
         Bundle bundle=new Bundle();
@@ -40,7 +40,11 @@ public class PagerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.homefragment, container, false);
-        RecyclerAdapter adapt=new RecyclerAdapter(d1);
+        ArrayList<Data> arrlist=new ArrayList<>();
+        arrlist.add(new Data("Rajiv","Photography can be art, hoby or..","600","30 to 50","20 Mar 2019","02 Apr 2019"));
+        arrlist.add(new Data("Rohit","Photography can be art, hoby or..","800","10 to 20","24 Mar 2019","02 Apr 2019"));
+        arrlist.add(new Data("Ankit","Photography can be art, hoby or..","700","15 to 30","20 Mar 2019","09 Apr 2019"));
+        RecyclerAdapter adapt=new RecyclerAdapter(arrlist,getActivity());
         RecyclerView recy=view.findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recy.setLayoutManager(llm);
